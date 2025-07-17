@@ -19,7 +19,7 @@ public class Obstacle : MonoBehaviour
 
     [SerializeField]
     
-    private float moveSpeed = 2.0f;
+    private float moveSpeed = 5.0f;
     private ObstacleState currentState = ObstacleState.Moving;
 
     void Start()
@@ -37,6 +37,7 @@ public class Obstacle : MonoBehaviour
         if (currentState == ObstacleState.Moving)
         {
             transform.Translate(-moveSpeed * Time.deltaTime, 0, 0);
+            Debug.Log(moveSpeed * Time.deltaTime);  
             if (transform.position.x < -20f)
             {
 
